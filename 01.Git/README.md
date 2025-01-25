@@ -23,3 +23,6 @@ In this project i will be using git and github to collaborate on a project. The 
 
 # Saving the project on a remote repository
 ![Push](img/git-push2.png)
+
+# Git Pull Request
+![Pull](img/git-pull-req.png)
