@@ -27,3 +27,5 @@ In this project i will be using git and github to collaborate on a project. The 
 # Git Pull Request
 ![Pull](img/git-pull-req.png)
 
+# Git Merge
+![Merge](img/git-merge-book-review-branch.png)
