@@ -3,6 +3,21 @@
 # Prompt the user to enter a number for the multiplication table
 read -p "Enter a number: " number
 
+# Function to check if input is a valid number
+is_number() {
+    [[ "$1" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]
+}
+
+# Keep prompting until a valid number is entered
+while ! is_number "$number"; do
+    echo "Invalid input. Please enter a valid number."
+    read number
+done
+
+
+
+
+
 # Prompt user for full or partial table
 read -p "Do you want a full table or a partial table? (Enter 'f' for full, 'p' for partial): " table_choice
 
