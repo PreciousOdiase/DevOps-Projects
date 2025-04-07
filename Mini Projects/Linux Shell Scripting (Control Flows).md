@@ -25,7 +25,7 @@ done
 ```
 
 📷 Screenshot of basic for loop execution:  
-![Basic Loop](https://raw.githubusercontent.com/Samjean50/tech_env_setup/main/loop1.png)
+![Basic Loop](img/for-loop.jpg)
 
 ---
 
@@ -42,7 +42,7 @@ done
 ```
 
 📷 Screenshot of range-based for loop:  
-![Range Loop](https://raw.githubusercontent.com/Samjean50/tech_env_setup/main/loop2.png)
+![Range Loop](img/loop-r.jpg)
 
 ---
 
@@ -59,7 +59,7 @@ done
 ```
 
 📷 Screenshot of C-style for loop:  
-![C-style Loop](https://raw.githubusercontent.com/Samjean50/tech_env_setup/main/loop3.png)
+![C-style Loop](img/loop-c.jpg)
 
 ---
 
