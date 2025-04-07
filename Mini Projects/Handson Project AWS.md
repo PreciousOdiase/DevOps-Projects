@@ -11,12 +11,12 @@ This project explores **Identity and Access Management (IAM)** within Amazon Web
 ### 1.1 Log in to the AWS Management Console
 Use an administrator account to log into the AWS Console.
 
-![AWS Login](https://user-images.githubusercontent.com/your-image-path/aws-login.png)
+![AWS Login](img/aws-sign.jpg)
 
 ### 1.2 Navigate to the IAM Dashboard
 The **IAM Dashboard** is the central place for managing AWS identities including users, roles, groups, and policies.
 
-![IAM Dashboard](https://user-images.githubusercontent.com/your-image-path/iam-dashboard.png)
+![IAM Dashboard](img/iam-dash.jpg)
 
 ---
 
