@@ -108,26 +108,7 @@ This project aims to provide a step-by-step guide for setting up a complete tech
 2. Click **Sign Up**.
 3. Enter your details and complete the setup.
 
-### Configuring GitHub with Git
-1. **Generate SSH key (for SSH authentication):**
-   ```sh
-   ssh-keygen -t rsa -b 4096 -C "your.email@example.com"
-   ```
-2. **Add the SSH key to GitHub:**
-   - Copy the key:
-     ```sh
-     type %USERPROFILE%\.ssh\id_rsa.pub
-     ```
-   - Go to **GitHub > Settings > SSH and GPG keys**.
-   - Click **New SSH Key**, paste the key, and save.
 
-### 🛠 Troubleshooting
-- **SSH authentication fails?** Run:
-  ```sh
-  ssh -T git@github.com
-  ```
-
----
 
 ## 🔹 6. Creating an AWS Account
 
