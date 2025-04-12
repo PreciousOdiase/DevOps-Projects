@@ -1,132 +1,89 @@
-# Single Endpoint Architecture: EC2 and S3 Integration
+# 🌐 AWS Web Hosting Project with EC2, NGINX, Elastic IP, and S3
 
-This document outlines the key learnings and steps taken to implement a Single Endpoint Architecture using AWS EC2 and S3 services. The project involved hosting a web application on EC2 while using S3 for static assets, with a reverse proxy configuration to unify access through a single endpoint.
+This project demonstrates the deployment of a web server and static website using AWS services. It includes launching an Ubuntu EC2 instance, installing NGINX, configuring an Elastic IP, and hosting a static webpage via Amazon S3.
 
 ---
 
-## Setting up the EC2 Instance
+## ✅ Project Overview
 
-![EC2 Instance Setup](images/ec2-setup.png)
+**Services Used:**
+- Amazon EC2 (Ubuntu)
+- NGINX Web Server
+- Elastic IP
+- Amazon S3 (Static Website Hosting)
 
-1. **Launching the Instance**:
-   - Selected an Amazon Linux 2 AMI with t2.micro instance type for cost efficiency
-   - Configured security groups to allow:
-     - SSH (port 22)
-     - HTTP (port 80)
-     - Custom application port (if needed)
+---
 
-2. **Application Deployment**:
-   ```bash
-   # Example deployment commands
-   sudo yum install -y nodejs
-   npm install
-   pm2 start app.js
+## 🛠️ Setup Steps
 
-Key Learning: IAM roles for EC2 eliminate the need for storing AWS credentials in configuration files.
+### 1. Launch an Ubuntu EC2 Instance
 
-Creating S3 Bucket
-S3 Bucket Creation
+An EC2 instance was launched using the Ubuntu Server 20.04 LTS AMI:
 
-Bucket Configuration:
+- Chose instance type: `t2.micro` (Free Tier eligible)
+- Configured a security group to allow **HTTP (80)**, **HTTPS (443)**, and **SSH (22)** access
+- Launched instance with a key pair for SSH access
 
-Naming: project-name-assets-[region]
+ ![EC2 Instance Setup](img/ec2-sea.jpg)
 
-Region: Matched with EC2 instance location
+---
 
-Versioning: Enabled for backup recovery
+### 2. Connect to the EC2 Instance via SSH
 
-Access Configuration:
+Used the key pair to securely SSH into the instance:
 
-json
-Copy
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::bucket-name/*"
-    }
-  ]
-}
-Key Learning: Bucket policies require explicit resource ARNs including the /* suffix for object access.
+```bash
+ssh -i "my-key.pem" ubuntu@<EC2-Public-IP>
 
-Configuring S3 Bucket for Web Hosting
-S3 Web Hosting
+```
 
-Static Website Hosting:
+### 3.  Install and Start NGINX
+Once inside the instance, NGINX was installed and configured:
 
-Enabled via S3 console > Properties
+```bash
+sudo apt update
+sudo apt install nginx -y
+sudo systemctl start nginx
+sudo systemctl enable nginx
+```
+ ![EC2 Instance Setup](img/sea-ec2-config.jpg)
 
-Set default documents:
 
-Index document: index.html
+NGINX was then confirmed to be running by accessing the public IP via browser.
 
-Error document: 404.html (optional)
+### 4. Allocate and Attach an Elastic IP
+An Elastic IP address was allocated and associated with the EC2 instance to ensure consistent public access.
 
-CORS Configuration:
+Steps:
 
-xml
-Copy
-<CORSConfiguration>
-  <CORSRule>
-    <AllowedOrigin>https://yourdomain.com</AllowedOrigin>
-    <AllowedMethod>GET</AllowedMethod>
-    <AllowedHeader>*</AllowedHeader>
-  </CORSRule>
-</CORSConfiguration>
-Run HTML
-Key Learning: CORS headers must be explicitly set for web applications fetching S3 resources.
+Go to EC2 > Elastic IPs > Allocate Elastic IP
 
-Configuring Nginx as a Reverse Proxy
-Reverse Proxy Diagram
+Associate the IP with the running EC2 instance
 
-/etc/nginx/conf.d/reverse-proxy.conf:
+### 5. Create and Configure S3 Bucket for Static Hosting
+An S3 bucket was created to host a static HTML file.
 
-nginx
-Copy
-server {
-    listen 80;
-    server_name yourdomain.com;
+Steps:
 
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_set_header Host $host;
-    }
+Created a new bucket with public access enabled
 
-    location /assets/ {
-        proxy_pass https://s3.amazonaws.com/your-bucket/;
-        proxy_set_header Host s3.amazonaws.com;
-    }
-}
-Key Learning: Proxy headers must be properly set to preserve request information.
+Uploaded index.html
 
-Testing and Validation
-1. Direct Application Access
-Direct Access Test
+Enabled static website hosting under Properties
 
-Accessed via Elastic IP: http://<EC2_IP>:<PORT>
+ ![EC2 Instance Setup](img/sea-s3-config.jpg)
 
-Verified:
 
-Application responds with 200 OK
+### 6. Access the Static Webpage
+Visited the S3 static site via its public endpoint:
 
-Core functionality works without proxy
+```
+http://<your-bucket-name>.s3-website-<region>.amazonaws.com/
+```
+ ![EC2 Instance Setup](img/sea-webpage.jpg)
 
-No mixed-content errors in console
 
-2. Reverse Proxy Validation
-bash
-Copy
-curl -I http://localhost
-# Expected:
-# HTTP/1.1 200 OK
-# Server: nginx/1.18.0
-3. S3 Asset Access Test
-bash
-Copy
-curl https://s3.amazonaws.com/your-bucket/image.png
-# Should return binary data with:
-# Content-Type: image/png
-Lessons Learned
+### 📦 Final Outcome
+✅ EC2 instance running NGINX accessible via a stable Elastic IP
+
+✅ Static website hosted and publicly available on Amazon S3

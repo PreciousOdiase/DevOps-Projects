@@ -2,8 +2,8 @@
 
 This guide summarizes the key steps and learnings from setting up and managing **Azure Virtual Machines (VMs)**, covering account creation, VM deployment, configuration, and management.
 
-![Azure Portal Dashboard](https://learn.microsoft.com/en-us/azure/azure-portal/media/azure-portal-overview/azure-portal-overview.png)  
-*(Source: Microsoft Azure Documentation)*
+![Azure Portal Dashboard](img/azure-portal.jpg)  
+
 
 ---
 
@@ -94,7 +94,6 @@ This guide summarizes the key steps and learnings from setting up and managing *
 This project demonstrated Azure’s flexibility in deploying and managing VMs. Key takeaways:  
 - **Resource organization** is critical for multi-service projects.  
 - **Right-sizing VMs** balances performance and budget.  
-- **Security** (SSH keys, NSGs) must be prioritized from the start.  
+- **Security** (SSH keys) must be prioritized from the start.  
 
-![Azure VM Architecture](https://learn.microsoft.com/en-us/azure/virtual-machines/media/overview/architecture.png)  
-*(Source: Microsoft Azure VM Documentation)*
+
