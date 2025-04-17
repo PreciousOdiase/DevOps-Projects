@@ -39,6 +39,7 @@ Inside this file, I added the following script:
 
 echo "Hello, this is my first shell script!"
 ```
+![script](img/script.jpg)
 
 ### 💾 Saving the File in VIM
 After writing the script in VIM:
