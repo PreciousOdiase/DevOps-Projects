@@ -97,6 +97,9 @@ ls -latr
 - `-r` → Reverse order
 
 ---
+![](img/script2.jpg)
+![](img/script3.jpg)
+
 
 ## 🎯 Conclusion
 Learning shell scripting has been incredibly useful for **automating tasks and improving efficiency**. Understanding **shebangs, variables, permissions, and file management** makes working in Linux much more powerful. 🚀
