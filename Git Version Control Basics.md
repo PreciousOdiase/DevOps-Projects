@@ -44,12 +44,14 @@ git status
 git add <filename>      # Add a single file
 git add .               # Add all files
 ```
-![Add](img/git1.png) 
+![Add](img/) 
 
 ### Committing Changes
 ```bash
 git commit -m "Commit message"
 ```
+![Commit](img/html-commit.png)
+
 ### Viewing History
 ```bash
 git log
@@ -79,7 +81,10 @@ git remote add origin <url>
 git fetch
 git pull
 ```
+![Push](img/git-push.png)
+
 ### Pushing Changes
 ```bash
 git push origin <branch-name>
 ```
+![Merge](img/merge-pull.jpg)
