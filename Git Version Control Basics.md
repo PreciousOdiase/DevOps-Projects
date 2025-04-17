@@ -44,6 +44,8 @@ git status
 git add <filename>      # Add a single file
 git add .               # Add all files
 ```
+![Add](img/git1.png) 
+
 ### Committing Changes
 ```bash
 git commit -m "Commit message"
