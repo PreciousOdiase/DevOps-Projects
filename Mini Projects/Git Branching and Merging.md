@@ -7,14 +7,14 @@ This file documents the knowledge and experience I gained from learning and prac
 ## Creating a Pull Request
 
 After making changes in a separate branch (e.g., `feature/login-page`), I learned how to open a **pull request (PR)** on GitHub. A pull request is a way to propose code changes and initiate discussions before merging them into the main branch.
-
+![Pull Request](img/git-pull-req.jpg)
 ### Steps I Followed:
 1. Created a new branch locally and pushed it to GitHub.
 2. On GitHub, I clicked **"Compare & Pull Request"** after pushing.
 3. Added a descriptive title and summary explaining the changes.
 4. Submitted the pull request for review.
 
-
+![Branches](img/git-branches.jpg)
 ---
 
 ## Merging the Pull Request into the Main Branch
@@ -32,7 +32,7 @@ After the pull request was reviewed and approved (or self-reviewed for personal 
 3. Deleted the feature branch after merging (optional but recommended).
 
 📷 Screenshot of Merging a Pull Request:  
-![Merging PR](../01.Git/img/git-pull-req.png)
+![Merging PR](img/git-merge-pull-req.jpg)
 
 ---
 
