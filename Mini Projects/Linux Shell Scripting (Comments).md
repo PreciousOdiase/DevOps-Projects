@@ -20,7 +20,7 @@ Although Bash doesn’t support multi-line comments natively, you can use  multi
 # This is the first line of a multi-line comment
 # This is the second line of the same comment
 ```
-
+![comments](img/script-commets.jpg)
 
 ## 🌟 2. Best Practices for Commenting
 
