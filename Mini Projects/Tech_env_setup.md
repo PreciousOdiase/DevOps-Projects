@@ -24,7 +24,7 @@ This project aims to provide a step-by-step guide for setting up a complete tech
 4. **Verify Installation:**
    - Open VSCode and navigate to **Help > About** to check the version.
 
-[Vscode](img/vscode-setup.jpg)
+![Vscode](img/vscode-setup.jpg)
 
 ### 🛠 Troubleshooting
 - **VSCode won’t open?** Try running it as Administrator.
@@ -54,7 +54,7 @@ This project aims to provide a step-by-step guide for setting up a complete tech
 ### 🛠 Troubleshooting
 - **Git command not found?** Restart your computer and try again.
 
-[Git](img/git-setup.jpg)
+![Git](img/git-setup.jpg)
 
 ---
 
@@ -79,7 +79,7 @@ This project aims to provide a step-by-step guide for setting up a complete tech
 - **VirtualBox won’t install?** Run the installer as Administrator.
 - **VM not starting?** Ensure **virtualization** is enabled in BIOS.
 
-[Virtualbox](img/virtualbox-setup.jpg)
+![Virtualbox](img/virtualbox-setup.jpg)
 ---
 
 ## 🔹 4. Installing Ubuntu on VirtualBox
@@ -104,7 +104,7 @@ This project aims to provide a step-by-step guide for setting up a complete tech
 ### 🛠 Troubleshooting
 - **VM won’t boot?** Enable **virtualization** in your BIOS settings.
 
-[Ubuntu](img/ubuntu-setup.jpg)
+![Ubuntu](img/ubuntu-setup.jpg)
 ---
 
 ## 🔹 5. Creating a GitHub Account
@@ -114,7 +114,7 @@ This project aims to provide a step-by-step guide for setting up a complete tech
 2. Click **Sign Up**.
 3. Enter your details and complete the setup.
 
-[Github](img/github-setup.jpg)
+![Github](img/github-setup.jpg)
 
 ## 🔹 6. Creating an AWS Account
 
@@ -128,7 +128,7 @@ This project aims to provide a step-by-step guide for setting up a complete tech
 ### 🛠 Troubleshooting
 - **Payment verification failed?** Ensure your card supports international transactions.
 
-[AWS](img/aws-setup.jpg)
+![AWS](img/aws-setup.jpg)
 
 ---
 
