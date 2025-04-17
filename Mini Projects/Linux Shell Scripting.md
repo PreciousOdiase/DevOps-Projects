@@ -18,12 +18,7 @@ To keep things organized, I created a directory for shell scripts:
 mkdir shell-scripting
 cd shell-scripting  # Navigate into the directory
 ```
-
-To confirm the directory was created:
-```sh
-ls -l
-```
-
+![](img/script-mk.jpg)
 ---
 
 ## ✍️ 3. Creating and Writing a Shell Script
@@ -86,15 +81,6 @@ Now, I can run the script with:
 ./my_first_shell_script.sh
 ```
 
-### 📜 Listing Files with `ls -latr`
-To check the newly created file and its details:
-```sh
-ls -latr
-```
-- `-l` → Long listing format
-- `-a` → Show hidden files
-- `-t` → Sort by modification time
-- `-r` → Reverse order
 
 ---
 ![](img/script2.jpg)
