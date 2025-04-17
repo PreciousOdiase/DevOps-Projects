@@ -20,7 +20,7 @@ To connect to my **EC2 instance**, I followed these steps:
 ### 1️⃣ Launching an EC2 Instance
 - Created an **Amazon Linux 2** EC2 instance on AWS.
 - Configured **security groups** to allow SSH (`port 22`).
-
+![EC2](img/ec2-setup.jpg)
 ### 2️⃣ Connecting via SSH
 Used the following command to SSH into my instance:
 ```sh
@@ -32,7 +32,7 @@ ssh -i my-key.pem ec2-user@<EC2_PUBLIC_IP>
   ```sh
   chmod 400 my-key.pem
   ```
-  fixed it.
+![SSH](img/ssh-ec2.jpg)
 
 ---
 
@@ -53,6 +53,8 @@ Once logged in, I updated the system:
 - `update` fetches the latest package lists.
 - `upgrade` installs the newest versions of installed packages.
 
+![Update](img/ec2-ssh-update.jpg)
+
 ---
 
 ## 📦 Installing Packages (Example: `tree`)
@@ -67,11 +69,13 @@ To enhance my system, I installed the **`tree`** package:
   ```sh
   sudo apt install tree -y
   ```
+![Install](img/ec2-ssh-tree-install.jpg)
 
 Then, I verified the installation:
 ```sh
 tree --version
 ```
+![Tree](img/ec2-tree-version.jpg)
 
 📌 **Takeaways**:
 - Using `-y` avoids confirmation prompts.
