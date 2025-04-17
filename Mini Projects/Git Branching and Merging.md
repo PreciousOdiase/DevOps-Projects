@@ -14,8 +14,6 @@ After making changes in a separate branch (e.g., `feature/login-page`), I learne
 3. Added a descriptive title and summary explaining the changes.
 4. Submitted the pull request for review.
 
-📷 Screenshot of Creating a Pull Request:  
-![Creating PR](https://raw.githubusercontent.com/Samjean50/tech_env_setup/main/create_pr.png)
 
 ---
 
@@ -34,7 +32,7 @@ After the pull request was reviewed and approved (or self-reviewed for personal 
 3. Deleted the feature branch after merging (optional but recommended).
 
 📷 Screenshot of Merging a Pull Request:  
-![Merging PR](https://raw.githubusercontent.com/Samjean50/tech_env_setup/main/merge_pr.png)
+![Merging PR](../01.Git/img/git-pull-req.png)
 
 ---
 
