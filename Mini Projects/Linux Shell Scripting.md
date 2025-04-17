@@ -19,6 +19,7 @@ mkdir shell-scripting
 cd shell-scripting  # Navigate into the directory
 ```
 ![](img/script-mk.jpg)
+![](img/script-u.jpg)
 ---
 
 ## ✍️ 3. Creating and Writing a Shell Script
@@ -45,7 +46,7 @@ To confirm the file is created:
 ```sh
 ls -l
 ```
-
+![](img/script-ls.jpg)
 ---
 
 ## 🔑 4. Understanding Important Shell Scripting Concepts
