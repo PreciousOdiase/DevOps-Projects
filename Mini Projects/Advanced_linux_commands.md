@@ -23,6 +23,7 @@ To view file permissions, use:
 ```sh
 ls -l
 ```
+![ls-l](img/ls-l.jpg)
 
 Example output:
 ```sh
@@ -53,6 +54,8 @@ This gives:
 - **Group**: Read, Execute (`5`)
 - **Others**: Read, Execute (`5`)
 
+![chmod](img/chmod.jpg)
+
 📌 **Key Learning**: Numeric mode simplifies setting multiple permissions at once.
 
 ---
@@ -63,16 +66,19 @@ This gives:
   chmod u+x script.sh  # Give execute permission to the user (owner)
   chmod g-w myfile.txt  # Remove write permission from the group
   ```
+![chmod2](img/chmod2.jpg)
 
 - **Change ownership using `chown`**:
   ```sh
   sudo chown newuser myfile.txt  # Change owner of a file
   sudo chown -R newuser:newgroup mydir/  # Change owner and group for a directory
   ```
+![chown](img/chown.jpg)
 
 📌 **Key Learning**: `chmod` and `chown` are essential for managing file security.
 
 ---
+
 
 ## 🔑 4. Superuser Privileges (`sudo`)
 The `sudo` command allows a regular user to execute administrative commands.
@@ -81,11 +87,13 @@ The `sudo` command allows a regular user to execute administrative commands.
   ```sh
   sudo -l
   ```
+![]()
 
 - Switch to the root user:
   ```sh
   sudo su
   ```
+![]()
 
 - Execute a command as root:
   ```sh
@@ -94,6 +102,8 @@ The `sudo` command allows a regular user to execute administrative commands.
   ```
 
 📌 **Key Learning**: Only grant **sudo access** to trusted users for security reasons.
+
+![]()
 
 ---
 
@@ -104,17 +114,20 @@ To manage users, I learned the following commands:
   ```sh
   sudo useradd -m newuser
   ```
+![useradd](img/useradd.jpg)
 
 - **Set a password for the user**:
   ```sh
   sudo passwd newuser
   ```
+![Password](img/passwd.jpg)
 
 - **Add the user to the sudo group** (for admin access):
   ```sh
   sudo usermod -aG sudo newuser  # Debian-based
   sudo usermod -aG wheel newuser  # Red Hat-based
   ```
+![Usermod](img/usermod.jpg)
 
 📌 **Key Learning**: Adding users correctly ensures security and controlled access.
 
@@ -125,16 +138,14 @@ To manage users, I learned the following commands:
   ```sh
   sudo usermod -l newname oldname
   ```
+![usermod](img/usermod2.jpg)
 
-- **Change a user's home directory**:
-  ```sh
-  sudo usermod -d /home/newdir -m username
-  ```
 
 - **Lock a user account**:
   ```sh
   sudo passwd -l username
   ```
+![Lock](img/usermod-l.jpg)
 
 📌 **Key Learning**: `usermod` is useful for modifying user attributes.
 
@@ -147,11 +158,8 @@ To remove a user from the system:
   ```sh
   sudo userdel username
   ```
+![Delete-User](img/userdel.jpg)
 
-- **Delete a user and their home directory**:
-  ```sh
-  sudo userdel -r username
-  ```
 
 📌 **Key Learning**: Always ensure a user’s data is backed up before deletion.
 
