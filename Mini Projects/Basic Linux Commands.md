@@ -11,6 +11,7 @@ Learning **Linux commands** for managing files and directories has been an insig
   ```sh
   pwd
   ```
+![pwd](img/ubuntu-pwd.jpg)
   📌 *Key Learning*: This helps confirm the exact location in the system before executing commands.
 
 - **`ls` (List Directory Contents):**  
@@ -21,7 +22,7 @@ Learning **Linux commands** for managing files and directories has been an insig
   ls -a  # Shows hidden files (starting with `.`)
   ```
   📌 *Key Learning*: Using different flags (`-l`, `-a`, etc.) gives more control over file listing.
-
+![ls](img/ubuntu-ls.jpg)
 ---
 
 ## 🛠 2. Creating and Removing Files with `touch` & `rm`
@@ -30,6 +31,7 @@ Learning **Linux commands** for managing files and directories has been an insig
   ```sh
   touch myfile.txt
   ```
+![touch](img/ubuntu-touch.jpg)  
   📌 *Key Learning*: Useful for quickly creating new files without opening an editor.
 
 - **`rm` (Remove/Delete a File):**  
@@ -40,7 +42,7 @@ Learning **Linux commands** for managing files and directories has been an insig
   rm -i file.txt  # Asks for confirmation before deletion
   ```
   📌 *Key Learning*: **Be cautious!** Once deleted, files **cannot be recovered** unless backed up.
-
+![rm](img/ubuntu-rm.jpg)
 ---
 
 ## 📁 3. Searching for Files with `find`
@@ -51,6 +53,7 @@ Learning **Linux commands** for managing files and directories has been an insig
   find . -type d  # List all directories in the current path
   find /var/log -mtime -3  # Find files modified in the last 3 days
   ```
+![find](img/ubuntu-find.jpg)  
   📌 *Key Learning*: `find` is a **powerful tool** for tracking down misplaced files.
 
 ---
@@ -62,6 +65,7 @@ Learning **Linux commands** for managing files and directories has been an insig
   sudo apt update  # Update system packages (Debian-based)
   sudo yum install nano  # Install nano editor (Red Hat-based)
   ```
+![sudo](img/ubuntu-update.jpg)  
   📌 *Key Learning*: Use **sudo** only when necessary to avoid accidental system modifications.
 
 ---
