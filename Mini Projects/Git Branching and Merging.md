@@ -35,7 +35,11 @@ After the pull request was reviewed and approved (or self-reviewed for personal 
 ![Merging PR](img/git-merge-pull-req.jpg)
 
 ---
-
+![](img/git-conflict.jpg)
+![](img/git-conflict2.jpg)
+![](img/git-merge.jpg)
+![](img/git-resolved.jpg)
+![](img/git-squash.jpg)
 ## Reflections
 
 - I now understand the importance of branches in isolating changes and keeping the main codebase stable.
