@@ -16,7 +16,7 @@ This project demonstrates the deployment of a web server and static website usin
 
 ## 🛠️ Setup Steps
 
-### 1. Launch an Ubuntu EC2 Instance
+### 1. Launched an Amazon Linux EC2 Instance
 
 An EC2 instance was launched using the Ubuntu Server 20.04 LTS AMI:
 
@@ -28,12 +28,8 @@ An EC2 instance was launched using the Ubuntu Server 20.04 LTS AMI:
 
 ---
 
-### 2. Configure Elastic IP
-Configured elastic Ip address and associated it with the Ec2 instance
-![Elstic IP](img/elastic-ip.jpg)
 
-
-### 3.  Install and Start NGINX
+### 2.  Install and Start NGINX
 Once inside the instance, NGINX was installed and configured:
 
 ```bash
@@ -43,41 +39,40 @@ sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
  ![EC2 Instance Setup](img/ec2-config-nginx.jpg)
+![Nginx](img/nginx-config.jpg)
 
 
-
-
-### 4. Allocate and Attach an Elastic IP
+### 3. Allocate and Attach an Elastic IP
 An Elastic IP address was allocated and associated with the EC2 instance to ensure consistent public access.
 
-Steps:
+![Elstic IP](img/elastic-ip.jpg)
 
-Go to EC2 > Elastic IPs > Allocate Elastic IP
 
-Associate the IP with the running EC2 instance
-
-### 5. Create and Configure S3 Bucket for Static Hosting
+### 4. Create and Configure S3 Bucket for Static Hosting
 An S3 bucket was created to host a static HTML file.
 
 Steps:
 
 Created a new bucket with public access enabled
 
-Uploaded index.html
+Uploaded index.html and style.css
 
 Enabled static website hosting under Properties
 
- ![EC2 Instance Setup](img/s3.jpg)
- ![Policy](img/bucket-policy.jpg)
+ ![Static Website](img/s3.jpg)
+ ![Bucket Policy](img/bucket-policy.jpg)
 
 
-### 6. Access the Static Webpage
+### 5. Access the Static Webpage
 Visited the S3 static site via its public endpoint:
 
 ```
-http://<your-bucket-name>.s3-website-<region>.amazonaws.com/
+ http://my-static-site-bucket12312.s3-website.eu-west-2.amazonaws.com
 ```
- ![EC2 Instance Setup](img/elastic-ip-website.jpg)
+![S3 Public Endpoint](img/static-website.jpg)
+
+Visited the S3 static site via its elastic IP:
+ ![Elastic IP](img/elastic-ip-website.jpg)
 
 
 ### 📦 Final Outcome
