@@ -24,18 +24,14 @@ An EC2 instance was launched using the Ubuntu Server 20.04 LTS AMI:
 - Configured a security group to allow **HTTP (80)**, **HTTPS (443)**, and **SSH (22)** access
 - Launched instance with a key pair for SSH access
 
- ![EC2 Instance Setup](img/ec2-sea.jpg)
+ ![EC2 Instance Setup](img/ec2.jpg)
 
 ---
 
-### 2. Connect to the EC2 Instance via SSH
+### 2. Configure Elastic IP
+Configured elastic Ip address and associated it with the Ec2 instance
+![Elstic IP](img/elastic-ip.jpg)
 
-Used the key pair to securely SSH into the instance:
-
-```bash
-ssh -i "my-key.pem" ubuntu@<EC2-Public-IP>
-
-```
 
 ### 3.  Install and Start NGINX
 Once inside the instance, NGINX was installed and configured:
@@ -46,10 +42,10 @@ sudo apt install nginx -y
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
- ![EC2 Instance Setup](img/sea-ec2-config.jpg)
+ ![EC2 Instance Setup](img/ec2-config-nginx.jpg)
 
 
-NGINX was then confirmed to be running by accessing the public IP via browser.
+
 
 ### 4. Allocate and Attach an Elastic IP
 An Elastic IP address was allocated and associated with the EC2 instance to ensure consistent public access.
@@ -71,7 +67,8 @@ Uploaded index.html
 
 Enabled static website hosting under Properties
 
- ![EC2 Instance Setup](img/sea-s3-config.jpg)
+ ![EC2 Instance Setup](img/s3.jpg)
+ ![Policy](img/bucket-policy.jpg)
 
 
 ### 6. Access the Static Webpage
@@ -80,7 +77,7 @@ Visited the S3 static site via its public endpoint:
 ```
 http://<your-bucket-name>.s3-website-<region>.amazonaws.com/
 ```
- ![EC2 Instance Setup](img/sea-webpage.jpg)
+ ![EC2 Instance Setup](img/elastic-ip-website.jpg)
 
 
 ### 📦 Final Outcome
