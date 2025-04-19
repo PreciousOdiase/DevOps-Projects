@@ -50,6 +50,6 @@ Lifecycle rule were created with these options;
 1. Filter type ".txt"
 2. Minimum object size "2"
 3. Maximum Object size "10"
-4. Transition to Glacier after 30 days, delete after 365 days).
+4. Transition to Objects move to Standard-IA, delete after 365 days).
 
 ![Lifecycle](img/s3-lifecycle.jpg)
