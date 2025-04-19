@@ -1,68 +1,44 @@
-# AWS Identity and Access Management (IAM) - Mini Project Documentation
+# AWS IAM Hands-On Project Report
 
-This documentation outlines the knowledge gained through hands-on learning and project work involving **AWS Identity and Access Management (IAM)**. IAM is a key component in securing AWS environments by managing access and permissions.
+## 📘 Introduction
 
----
-
-## 📘 What is IAM?
-
-**IAM (Identity and Access Management)** is an AWS service that helps securely control access to AWS services and resources. IAM allows you to create and manage users and groups and define permissions to allow or deny their access to AWS resources.
-
-**Key Features:**
-- Centralized access control
-- Least privilege principle enforcement
-- Role-based access control
-- MFA and identity federation support
-
-![IAM Overview](https://d1.awsstatic.com/Projects/IAM/iam-diagram.3e6a4a4b8d1770b49e05ff89f23e05fc096d944e.png)
+This project demonstrates a practical implementation of AWS Identity and Access Management (IAM) by creating IAM users, groups, and a custom-managed policy. The goal was to simulate a real-world permissions structure and gain hands-on experience with access control in AWS. All steps were executed using the AWS Management Console, with supporting screenshots included.
 
 ---
 
-## 👤 What is an IAM User?
+## 🛠️ Step-by-Step Implementation
 
-An **IAM User** is a representation of a person or an application that interacts with AWS. Each user has a unique name and credentials such as passwords or access keys.
+### ✅ Step 1: Create an IAM Group - `Developer-Team`
 
-**Use Cases:**
-- Developers or admins logging in to AWS
-- Applications accessing AWS via SDK
+A group named `Developer-Team` was created to simplify user management and permission assignments.
 
-**Permissions are granted directly or via group memberships.**
 
-![IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/images/console_users.png)
+![Create IAM Group](img/iam-user-group.jpg)
 
 ---
 
-## 🛡️ What is an IAM Role?
+### ✅ Step 2: Create IAM Users
 
-An **IAM Role** is an AWS identity with permissions policies that determine what actions the identity can perform. Unlike users, roles are assumed temporarily and do not have long-term credentials.
+One IAM user was created with Ec2 Access
+- `Eric`
 
-**Use Cases:**
-- Granting permissions to AWS services (e.g., EC2 to access S3)
-- Federated identities
-- Cross-account access
+Two other users were created and added to the Development-Team
+- `Ade`
+- `Jack`
 
-![IAM Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/images/roles_diagram.png)
+
+![Create Users](img/user-iam-eric.jpg)
+![Create Users](img/iam-user-ade.jpg)
+![Add Users to Group](img/iam-dev-users.jpg)
 
 ---
 
-## 📜 What is an IAM Policy?
+### ✅ Step 3: Create a Custom IAM Policy
 
-An **IAM Policy** is a JSON document that defines permissions. It specifies allowed or denied actions on AWS resources.
+Two customer-managed policies named `Development-Team-Policy` and `Policy-for-Eric` was created. 
+The `Development-Team-Policy` gave full access to all S3 bucket and Ec2 instances while the `Policy-for-Eric` gave full access to only S3 and this was attached to the IAM user Eric
 
-**Types of Policies:**
-- AWS Managed Policies
-- Customer Managed Policies
-- Inline Policies
 
-**Example Policy:**
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": "s3:ListBucket",
-      "Resource": "*"
-    }
-  ]
-}
+![Policy](img/policy-dev-team.jpg)
+![Policy](img/policy-ec2.jpg)
+![Policy](img/attach-policy-dev.jpg)
