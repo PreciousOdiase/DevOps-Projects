@@ -28,8 +28,9 @@ This document describes the configuration of **Security Groups (SG)** and **Netw
 
 ### Inbound Rules
 
-![Security Group Inbound](img/sg-wordpress.jpg)
+![Security Group Inbound](img/sg-new.jpg)
 ![Security Group Outbound](img/sg-wordpress-outbound.jpg)
+
 
 ### Outbound Rules
 
