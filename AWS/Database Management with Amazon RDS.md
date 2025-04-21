@@ -46,8 +46,8 @@ I chose **Amazon RDS for MySQL** as the engine.
 ## ⚙️ Step 3: Parameter Groups & Options
 
 For basic dev work, I used parameter store to create the neccesary parameters.
-
-![RDS Parameter Store](img/rds-parameter-ssh.png)
+![RDS Parameter Store](img/parameter-store.png)
+![RDS Parameter to bash](img/rds-parameter-ssh.png)
 
 
 ---
