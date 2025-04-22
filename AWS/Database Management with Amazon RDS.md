@@ -45,7 +45,7 @@ I chose **Amazon RDS for MySQL** as the engine.
 
 ## ⚙️ Step 3: Parameter Groups & Options
 
-For basic dev work, I used parameter store to create the neccesary parameters.
+I used parameter store to create the neccesary parameters.
 ![RDS Parameter Store](img/parameter-store.png)
 ![RDS Parameter to bash](img/rds-parameter-ssh.png)
 
@@ -54,7 +54,7 @@ For basic dev work, I used parameter store to create the neccesary parameters.
 
 ## 🔗 Step 4: Connecting RDS to EC2
 
-Once the RDS instance was available, I used the **endpoint and port** to connect from my EC2-hosted WordPress app (or Laravel in some other tests).
+Once the RDS instance was available, I used the **endpoint and port** to connect from my EC2-hosted WordPress app.
 
 ```bash
 mysql -h your-db-endpoint.rds.amazonaws.com -u admin -p
