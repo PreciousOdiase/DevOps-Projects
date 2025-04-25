@@ -32,3 +32,5 @@ The **aws_cloud_manager.sh** script is modular, with each function performing a 
 ### check_num_of_args()
 - Ensures the script receives exactly one argument (environment name).
 - If not, displays a usage message and exits.
+![Script1](img/script-updated.jpg)
+![Script2](img/script-updated2.jpg)
