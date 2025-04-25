@@ -4,8 +4,7 @@ In this mini project, I learned how to create a reusable and flexible shell scri
 
 
 
-
-
 ![Script](img/script.jpg)
 ![Permission](img/script-permission.jpg)
 ![Test](img/script-cloud-manager.jpg)
+
