@@ -39,3 +39,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ## Login to Jenkins console
 
 - ![image](img/jenkins-dashboard-aws.png)
+
+## Pipeline Job
+
+- ![image](img/pipeline-output.png)
