@@ -34,6 +34,8 @@ Go to the Build Triggers section of your Freestyle project.
 Check the option GitHub hook trigger for GITScm polling.
 
 This ensures Jenkins listens for webhook calls from GitHub and initiates a build automatically.
+![image](img/freestyle-job-setup.png)
+![image](img/freestyle-job-setup-2.png)
 
 ---
 
@@ -61,6 +63,8 @@ Save the webhook.
 
 After this, any git push to the repository will trigger the Jenkins job.
 
+![image](img/webhook.png)
+
 ---
 
 # Summary
@@ -72,3 +76,5 @@ Jenkins pulls source code from GitHub.
 Automatically triggers builds via webhook.
 
 Keeps your project continuously integrated and up to date.
+![image](img/pipeline-build.png)
+![image](img/job-triggering.png)
