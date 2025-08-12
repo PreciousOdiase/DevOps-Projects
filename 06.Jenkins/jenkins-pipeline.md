@@ -12,7 +12,7 @@ This guide demonstrates how to set up and manage a **Jenkins Pipeline Project**.
 4. Select **Pipeline** and click **OK**.
 5. In the configuration screen, provide a short **description** (optional).
 
-![Create Pipeline Job](https://example.com/images/create-pipeline-job.png)
+![Create Pipeline Job](img/docker-pipeline-setup.png)
 
 ---
 
@@ -22,15 +22,15 @@ To automate your pipeline:
 
 1. Scroll to the **Build Triggers** section.
 2. Check the option **GitHub hook trigger for GITScm polling** if using GitHub.
-3. Alternatively, use **Poll SCM** with a cron syntax (e.g., `H/5 * * * *`) for polling every 5 minutes.
+3. Select pipeline script from SCM
 
-![Configure Build Trigger](https://example.com/images/configure-build-trigger.png)
+![Pipeline Setup](img/docker-pipeline-setup2.png)
 
 ---
 
 ## Writing Jenkins Pipeline Script
 
-You can write your pipeline using the **Declarative Pipeline Syntax** directly in the Jenkins UI or by referencing a `Jenkinsfile` from your repository.
+Write your pipeline using the **Declarative Pipeline Syntax** directly in the Jenkins UI and reference the `Jenkinsfile` from your repository.
 
 **Example Script:**
 
@@ -39,32 +39,30 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
+        stage('Build Docker Image') {
             steps {
-                git 'https://github.com/your-username/your-repo.git'
+                script {
+                    sh 'docker build -t dockerfile .'
+                }
             }
         }
 
-        stage('Build') {
+        stage('Run Docker Container') {
             steps {
-                echo 'Building the project...'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying application...'
+                script {
+                    sh 'docker run -itd --name nginx -p 8081:80 dockerfile'
+                }
             }
         }
     }
 }
 ```
+
+# Configure Webhook
+
+Enter the setting on the github repository and configure webhook
+
+![Webhook](img/github-webhook.png)
 
 ## Installing Docker
 
@@ -99,50 +97,49 @@ sudo usermod -aG docker jenkins
 
 Install Docker Pipeline Plugin in Jenkins (Manage Jenkins > Manage Plugins > Available).
 
-## Building Pipeline Script
+![Docker-install](img/docker-install.png)
 
-To include Docker in your pipeline:
+## Dockerfile
 
-Example:
+```bash
+# Use the official NGINX base image
+FROM nginx:latest
 
-```groovy
-pipeline {
-    agent any
+# Set the working directory in the container
+WORKDIR  /usr/share/nginx/html/
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/your-username/your-repo.git'
-            }
-        }
+# Copy the local HTML file to the NGINX default public directory
+COPY index.html /usr/share/nginx/html/
 
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    dockerImage = docker.build("my-app-image")
-                }
-            }
-        }
-
-        stage('Run Container') {
-            steps {
-                script {
-                    dockerImage.run('-p 8080:8080')
-                }
-            }
-        }
-    }
-}
+# Expose port 80 to allow external access
+EXPOSE 80
 ```
+
+---
+
+![Dockerfile](img/git-init.png)
+
+## Jenkins job triggered
+
+![pipeline-logs](img/docker-pipeline-logs.png)
+![pipeline-logs2](img/docker-pipeline0log2.png)
+![pipeline-logs3](img/docke-pipeline-log3.png)
+
+## Final Steps
+
+Ensure port 8081 is open/exposed on your cloud instance or server. jenkins
+![Inbound-rule](img/inbound-rule-docker-pipeline.png)
+Access your deployed index.html page by visiting http://:8081 in your browser.
+![Access-page](img/page-access.png)
 
 ## Summary
 
-By following the above steps, you can:
+Set up a Jenkins Pipeline job connected to GitHub.
 
-Create and configure a Jenkins Pipeline job.
+Generated and inserted a valid pipeline script.
 
-Automate builds with triggers.
+Installed Docker using a shell script.
 
-Use Docker for building and running containers.
+Triggered a Jenkins build by pushing files to GitHub.
 
-Maintain CI/CD pipelines using simple Groovy-based scripts.
+Exposed a custom web app through port 8081.
