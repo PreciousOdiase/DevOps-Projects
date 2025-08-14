@@ -150,3 +150,22 @@ node_modules/
 ```
 
 ![Github-Action](img/gihub-action.png)
+
+---
+
+### Workflow Features
+
+- **Dependency Caching**: Speeds up CI runs by caching `node_modules` based on `package-lock.json`.
+- **Linting with ESLint**: Ensures code quality using a Node.js + Jest ESLint flat config.
+- **Automated Testing with Jest**: Runs unit tests for every push and pull request.
+- **Deployment Placeholder**: Ready for integration with your deployment provider (Heroku, Vercel, AWS, etc.).
+- **Ignored Triggers**: Changes to `README.md` do not trigger CI.
+
+1. On each push or PR to `main` (except `README.md` changes), GitHub Actions runs:
+   - **Install**: `npm ci` with caching
+   - **Lint**: `npm run lint`
+   - **Test**: `npm test`
+   - **Build**: `npm run build --if-present`
+   - **Deploy**: Placeholder command (to be replaced with real deployment)
+
+![Github-Action-2](img/github-action-2.png)
