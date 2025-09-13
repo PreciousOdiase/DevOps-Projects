@@ -33,9 +33,14 @@ This repository sets up and deploys a MERN (MongoDB, Express, React, Node.js) ap
 
 ```
 
-## ![Project-setup](img/project-setup.png)
+![Project-setup](img/project-setup.png)
 
 ## 🚀 Deployment Process
+
+### Dockerized web app
+
+![Docker-frontend](../07.Github-Actions/img/docker-build-frontend.png)
+![Docker-backend](../07.Github-Actions/img/docker-build-backend.png)
 
 ### 🔧 Infrastructure
 
